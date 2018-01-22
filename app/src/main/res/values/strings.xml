@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My_CalC</string>
+    <string name="background_image">background image</string>
+    <string name="get_started">GET STARTED</string>
 </resources>
