@@ -15,14 +15,13 @@
         app:layout_constraintGuide_percent="0.35097003" />
 
 
-    <EditText
+    <TextView
         android:id="@+id/TextViewBar"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
-        android:hint="Enter Here"
-        android:singleLine="false"
+        android:hint="@string/TextView_hint"
+        android:textColorLink="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,18 +30,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/hori1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline">
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        android:baselineAligned="false">
 
 
         <LinearLayout
-            android:id="@+id/verti1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -59,7 +57,7 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@android:color/holo_red_dark"
                     android:onClick="ClearAllBtnClicked"
-                    android:text="AC"
+                    android:text="@string/ac"
                     android:textColorLink="@android:color/holo_orange_dark"
                     android:textSize="24sp" />
             </LinearLayout>
@@ -75,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="SevenBtnClicked"
-                    android:text="7"
+                    android:text="@string/seven"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -90,7 +88,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="FourBtnClicked"
-                    android:text="4"
+                    android:text="@string/four"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -105,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="OneBtnClicked"
-                    android:text="1"
+                    android:text="@string/one"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -120,13 +118,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="PercentBtnClicked"
-                    android:text="%"
+                    android:text="@string/percent"
                     android:textSize="24sp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/varti2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -142,7 +139,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="EraseOneBtnClicked"
-                    android:text="BACK"
+                    android:text="@string/back"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -157,7 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="EightBtnClicked"
-                    android:text="8"
+                    android:text="@string/eight"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -172,7 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="FiveBtnClicked"
-                    android:text="5"
+                    android:text="@string/five"
                     android:textSize="24sp" /></LinearLayout>
 
             <LinearLayout
@@ -186,7 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="TwoBtnClicked"
-                    android:text="2"
+                    android:text="@string/two"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -201,13 +198,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="ZeroBtnClicked"
-                    android:text="0"
+                    android:text="@string/zero"
                     android:textSize="24sp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/verti3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -223,7 +219,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="DivideBtnClicked"
-                    android:text="/"
+                    android:text="@string/slash"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -238,7 +234,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="NineBtnClicked"
-                    android:text="9"
+                    android:text="@string/nine"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -253,7 +249,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="SixBtnClicked"
-                    android:text="6"
+                    android:text="@string/six"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -268,7 +264,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="ThreeBtnClicked"
-                    android:text="3"
+                    android:text="@string/three"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -283,13 +279,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="DecimalBtnClicked"
-                    android:text="."
+                    android:text="@string/dot"
                     android:textSize="24sp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/verti4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -306,7 +301,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="MultiplyBtnClicked"
-                    android:text="*"
+                    android:text="@string/star"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -321,7 +316,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="MinusBtnClicked"
-                    android:text="-"
+                    android:text="@string/minus"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -336,7 +331,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="plusBtnClicked"
-                    android:text="+"
+                    android:text="@string/plus"
                     android:textSize="24sp" />
             </LinearLayout>
 
@@ -352,7 +347,7 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@android:color/holo_orange_dark"
                     android:onClick="EqualBtnClicked"
-                    android:text="="
+                    android:text="@string/equal"
                     android:textSize="24sp" />
             </LinearLayout>
 
