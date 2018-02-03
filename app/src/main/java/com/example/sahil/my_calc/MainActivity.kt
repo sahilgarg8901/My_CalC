@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     var text : String? = ""
+    private var len: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,7 +83,10 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun EraseOneBtnClicked(view: View) {
-
+        len = TextViewBar.text.toString().length
+        if (len > 0){
+            TextViewBar.text = TextViewBar.text.toString().substring(0,len-1)
+        }
     }
     fun EqualBtnClicked(view: View){
 
