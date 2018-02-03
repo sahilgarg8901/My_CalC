@@ -14,15 +14,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.35097003" />
 
-
-    <EditText
+    <TextView
         android:id="@+id/TextViewBar"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
-        android:inputType="number|numberSigned|numberDecimal"
-        android:text="6+3=9"
+        android:hint="@string/TextView_hint"
+        android:textColorLink="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,19 +28,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <LinearLayout
-        android:id="@+id/hori1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline">
+        app:layout_constraintTop_toBottomOf="@id/guideline" android:baselineAligned="false">
 
 
         <LinearLayout
-            android:id="@+id/verti1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -58,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@android:color/holo_red_dark"
-                    android:text="AC"
+                    android:text="@string/ac"
                     android:textColorLink="@android:color/holo_orange_dark"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -73,7 +71,7 @@
                     android:id="@+id/SevenButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="7"
+                    android:text="@string/seven"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -87,7 +85,7 @@
                     android:id="@+id/FourButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="4"
+                    android:text="@string/four"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -101,7 +99,7 @@
                     android:id="@+id/OneButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="1"
+                    android:text="@string/one"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -115,13 +113,12 @@
                     android:id="@+id/PercentButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="%"
+                    android:text="@string/percent"
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/varti2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -136,7 +133,7 @@
                     android:id="@+id/EraseOneButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="BACK"
+                    android:text="@string/back"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -150,7 +147,7 @@
                     android:id="@+id/EightButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="8"
+                    android:text="@string/eight"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -161,10 +158,10 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/FIveButton"
+                    android:id="@+id/FiveButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="5"
+                    android:text="@string/five"
                     android:textSize="18sp" /></LinearLayout>
 
             <LinearLayout
@@ -177,7 +174,7 @@
                     android:id="@+id/TwoButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="2"
+                    android:text="@string/two"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -191,13 +188,13 @@
                     android:id="@+id/ZeroButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="0"
+                    android:text="@string/zero"
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/verti3"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -212,7 +209,7 @@
                     android:id="@+id/DivideButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="/"
+                    android:text="@string/slash"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -226,7 +223,7 @@
                     android:id="@+id/NineButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="9"
+                    android:text="@string/nine"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -240,7 +237,7 @@
                     android:id="@+id/SixButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="6"
+                    android:text="@string/six"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -254,7 +251,7 @@
                     android:id="@+id/ThreeButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="3"
+                    android:text="@string/three"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -265,16 +262,16 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/DotButton"
+                    android:id="@+id/DecimalButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="."
+                    android:text="@string/dot"
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/verti4"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -290,7 +287,7 @@
                     android:id="@+id/MultiplyButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="*"
+                    android:text="@string/star"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -304,7 +301,7 @@
                     android:id="@+id/MinusButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="-"
+                    android:text="@string/minus"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -318,7 +315,7 @@
                     android:id="@+id/plusButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="+"
+                    android:text="@string/plus"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -333,11 +330,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@android:color/holo_orange_dark"
-                    android:text="="
+                    android:text="@string/equal"
                     android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
