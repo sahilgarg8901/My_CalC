@@ -1,8 +1,10 @@
-package com.example.sahil.my_calc
+package com.example.sahil.my_calc.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.sahil.my_calc.Controller.Utilities.Extra_text
+import com.example.sahil.my_calc.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,8 +15,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       TextViewBar.text=""
+        if (savedInstanceState != null){
+            text = savedInstanceState.getString(Extra_text)
+            TextViewBar.text = text
+        }else{
+            TextViewBar.text = null
+        }
     }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        //outState?.putParcelable(Extra_text,text as Parcelable?)
+        outState?.putString(Extra_text,text)
+    }
+
     fun ClearAllBtnClicked(view: View){
         TextViewBar.text = ""
     }
@@ -85,7 +99,8 @@ class MainActivity : AppCompatActivity() {
     fun EraseOneBtnClicked(view: View) {
         len = TextViewBar.text.toString().length
         if (len > 0){
-            TextViewBar.text = TextViewBar.text.toString().substring(0,len-1)
+            text = TextViewBar.text.toString().substring(0,len-1)
+            TextViewBar.text = text
         }
     }
     fun EqualBtnClicked(view: View){
