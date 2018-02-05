@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.sahil.my_calc.Utilities.Extra_text
 import com.example.sahil.my_calc.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,7 +34,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ClearAllBtnClicked(view: View){
-        TextViewBar.text = ""
+        if(TextViewBar.text.isEmpty()){
+            Toast.makeText(this, "Already Blank", Toast.LENGTH_SHORT).show()
+        }else TextViewBar.text = ""
     }
     fun DivideBtnClicked(view: View){
 
@@ -42,7 +45,10 @@ class MainActivity : AppCompatActivity() {
                 text = "${TextViewBar.text.toString()}/"
             }  else if (check == 1) {
                 text = "${TextViewBar.text.toString().dropLast(1)}/"
-            } else text = TextViewBar.text.toString()
+            } else {
+                Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
+                text = TextViewBar.text.toString()
+            }
 
             TextViewBar.text = text
     }
@@ -52,7 +58,10 @@ class MainActivity : AppCompatActivity() {
             text = "${TextViewBar.text.toString()}*"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}*"
-        } else text = TextViewBar.text.toString()
+        } else {
+            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
+            text = TextViewBar.text.toString()
+        }
 
         TextViewBar.text = text
     }
@@ -74,7 +83,24 @@ class MainActivity : AppCompatActivity() {
             text = "${TextViewBar.text.toString()}-"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}-"
-        } else text = TextViewBar.text.toString()
+        } else {
+            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
+            text = TextViewBar.text.toString()
+        }
+        /*len = TextViewBar.text.toString().length
+        if (len > 0){
+            if (TextViewBar.text.toString()[len-1] in ZeroTonine){
+                text = "${TextViewBar.text.toString()}-"
+            } else{
+                if (TextViewBar.text.toString()[len-1] == '-'){
+                    text = TextViewBar.text.toString()
+                }else{
+                    text = "${TextViewBar.text.toString()}-"
+                }
+            }
+        } else {
+            text = "-"
+        }*/
 
         TextViewBar.text = text
     }
@@ -96,7 +122,10 @@ class MainActivity : AppCompatActivity() {
             text = "${TextViewBar.text.toString()}+"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}+"
-        } else text = TextViewBar.text.toString()
+        } else {
+            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
+            text = TextViewBar.text.toString()
+        }
 
         TextViewBar.text = text
     }
@@ -118,7 +147,10 @@ class MainActivity : AppCompatActivity() {
             text = "${TextViewBar.text.toString()}%"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}%"
-        } else text = TextViewBar.text.toString()
+        } else {
+            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
+            text = TextViewBar.text.toString()
+        }
 
         TextViewBar.text = text
     }
@@ -135,6 +167,8 @@ class MainActivity : AppCompatActivity() {
         if (len > 0){
             text = TextViewBar.text.toString().substring(0,len-1)
             TextViewBar.text = text
+        }else {
+            Toast.makeText(this, "Already Blank", Toast.LENGTH_SHORT).show()
         }
     }
     fun EqualBtnClicked(view: View){
