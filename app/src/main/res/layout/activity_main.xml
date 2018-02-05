@@ -118,8 +118,8 @@
                     android:id="@+id/PercentButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="PercentBtnClicked"
-                    android:text="@string/percent"
+                    android:onClick="PowerBtnClicked"
+                    android:text="@string/power"
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>

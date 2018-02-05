@@ -22,4 +22,5 @@
     <string name="plus">+</string>
     <string name="equal">=</string>
     <string name="TextView_hint">Enter Here</string>
+    <string name="power">^</string>
 </resources>

@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     var text : String? = ""
     private var len: Int = 0
-    private var check : Int = 2
+    private var check : Int = 2  // var used to store the return value of operator_check() function.
     private val ZeroTonine = arrayListOf<Char>('0','1','2','3','4','5','6','7','8','9','.')
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,15 +41,15 @@ class MainActivity : AppCompatActivity() {
     fun DivideBtnClicked(view: View){
 
             check = operator_check()
-            if(check == 2){
+            if(check == 2){                // add the '/' character to the string.
                 text = "${TextViewBar.text.toString()}/"
-            }  else if (check == 1) {
+            }  else if (check == 1) {      // replace the last character of the string with '/'
                 text = "${TextViewBar.text.toString().dropLast(1)}/"
-            } else {
+            } else {                // Showing a toast & keeping the text same as it is.
                 Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
                 text = TextViewBar.text.toString()
             }
-
+                                    // Same above method is used in all other operator functions.
             TextViewBar.text = text
     }
     fun MultiplyBtnClicked(view: View){
@@ -141,12 +141,12 @@ class MainActivity : AppCompatActivity() {
         text = "${TextViewBar.text.toString()}3"
         TextViewBar.text = text
     }
-    fun PercentBtnClicked(view: View){
+    fun PowerBtnClicked(view: View){
         check = operator_check()
         if(check == 2){
-            text = "${TextViewBar.text.toString()}%"
+            text = "${TextViewBar.text.toString()}^"
         }  else if (check == 1) {
-            text = "${TextViewBar.text.toString().dropLast(1)}%"
+            text = "${TextViewBar.text.toString().dropLast(1)}^"
         } else {
             Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
             text = TextViewBar.text.toString()
