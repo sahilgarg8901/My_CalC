@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
-        android:gravity="left|center_vertical"
+        android:gravity="start|center_vertical"
         android:hint="@string/TextView_hint"
         android:textColorLink="@android:color/black"
         android:textSize="30sp"

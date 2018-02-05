@@ -2,8 +2,9 @@ package com.example.sahil.my_calc.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import com.example.sahil.my_calc.Controller.Utilities.Extra_text
+import com.example.sahil.my_calc.Utilities.Extra_text
 import com.example.sahil.my_calc.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -11,6 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     var text : String? = ""
     private var len: Int = 0
+    private var check : Int = 2
+    private val ZeroTonine = arrayListOf<Char>('0','1','2','3','4','5','6','7','8','9','.')
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +36,24 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = ""
     }
     fun DivideBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}/"
-        TextViewBar.text = text
+
+            check = operator_check()
+            if(check == 2){
+                text = "${TextViewBar.text.toString()}/"
+            }  else if (check == 1) {
+                text = "${TextViewBar.text.toString().dropLast(1)}/"
+            } else text = TextViewBar.text.toString()
+
+            TextViewBar.text = text
     }
     fun MultiplyBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}*"
+        check = operator_check()
+        if(check == 2){
+            text = "${TextViewBar.text.toString()}*"
+        }  else if (check == 1) {
+            text = "${TextViewBar.text.toString().dropLast(1)}*"
+        } else text = TextViewBar.text.toString()
+
         TextViewBar.text = text
     }
     fun SevenBtnClicked(view: View){
@@ -53,7 +69,13 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun MinusBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}-"
+        check = operator_check()
+        if(check == 2){
+            text = "${TextViewBar.text.toString()}-"
+        }  else if (check == 1) {
+            text = "${TextViewBar.text.toString().dropLast(1)}-"
+        } else text = TextViewBar.text.toString()
+
         TextViewBar.text = text
     }
     fun FourBtnClicked(view: View){
@@ -69,7 +91,13 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun plusBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}+"
+        check = operator_check()
+        if(check == 2){
+            text = "${TextViewBar.text.toString()}+"
+        }  else if (check == 1) {
+            text = "${TextViewBar.text.toString().dropLast(1)}+"
+        } else text = TextViewBar.text.toString()
+
         TextViewBar.text = text
     }
     fun OneBtnClicked(view: View){
@@ -85,7 +113,13 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun PercentBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}%"
+        check = operator_check()
+        if(check == 2){
+            text = "${TextViewBar.text.toString()}%"
+        }  else if (check == 1) {
+            text = "${TextViewBar.text.toString().dropLast(1)}%"
+        } else text = TextViewBar.text.toString()
+
         TextViewBar.text = text
     }
     fun ZeroBtnClicked(view: View){
@@ -105,6 +139,14 @@ class MainActivity : AppCompatActivity() {
     }
     fun EqualBtnClicked(view: View){
 
+    }
+    private fun operator_check() : Int {
+        len = TextViewBar.text.toString().length
+        if (len > 0){
+            if (TextViewBar.text.toString()[len-1] in ZeroTonine) return 2 else return 1
+        } else return 0
+       /* this function returns 0 if string is empty, for replacement it returns 1 &
+         add the operator it returns 2.*/
     }
 }
 

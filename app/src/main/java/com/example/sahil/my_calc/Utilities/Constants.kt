@@ -1,4 +1,4 @@
-package com.example.sahil.my_calc.Controller.Utilities
+package com.example.sahil.my_calc.Utilities
 
 /**
  * Created by sahil on 4/2/18.
