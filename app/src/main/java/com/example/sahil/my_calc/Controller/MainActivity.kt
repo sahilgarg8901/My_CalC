@@ -144,8 +144,13 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun DecimalBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}."
-        TextViewBar.text = text
+        text = TextViewBar.text.toString()
+        if ( text?.lastOrNull() == '.'){
+            Toast.makeText(this, "Decimal Overloaded", Toast.LENGTH_SHORT).show()
+        } else{
+            text = "${TextViewBar.text.toString()}."
+            TextViewBar.text = text
+        }
     }
     fun EraseOneBtnClicked(view: View) {
         len = TextViewBar.text.toString().length
@@ -159,13 +164,20 @@ class MainActivity : AppCompatActivity() {
     fun EqualBtnClicked(view: View){
         if(TextViewBar.text.isEmpty()){
             Toast.makeText(this, "Enter Something", Toast.LENGTH_SHORT).show()
-        } else if (operator_check() == 1){
+        } /*else if (operator_check() == 1){
             Toast.makeText(this, "Incorrect Syntax", Toast.LENGTH_SHORT).show()
-        }
+        }*/
         else {
-            text = TextViewBar.text.toString()
-           // TextViewBar.text = "$text = ${calculation.perform(text)}"
-            TextViewBar.text = calculation.perform(text)
+            try {
+
+                text = TextViewBar.text.toString()
+                TextViewBar.text = calculation.perform(text)
+            } catch (e : Exception) {
+                Toast.makeText(this, "Incorrect Syntax", Toast.LENGTH_SHORT).show()
+                while (!calculation.List.isEmpty()){
+                    calculation.List.removeAt(0)
+                }
+            }
         }
     }
     private fun operator_check() : Int {
