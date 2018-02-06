@@ -44,7 +44,9 @@ class MainActivity : AppCompatActivity() {
     fun DivideBtnClicked(view: View){
 
             check = operator_check()
-            if(check == 2){                // add the '/' character to the string.
+            if (infinity_check()){
+                text = ""
+            } else if(check == 2){                // add the '/' character to the string.
                 text = "${TextViewBar.text.toString()}/"
             }  else if (check == 1) {      // replace the last character of the string with '/'
                 text = "${TextViewBar.text.toString().dropLast(1)}/"
@@ -57,7 +59,9 @@ class MainActivity : AppCompatActivity() {
     }
     fun MultiplyBtnClicked(view: View){
         check = operator_check()
-        if(check == 2){
+        if (infinity_check()){
+            text = ""
+        } else if(check == 2){
             text = "${TextViewBar.text.toString()}*"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}*"
@@ -69,20 +73,34 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun SevenBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}7"
+        if (infinity_check()){
+            text = "7"
+        } else {
+            text = "${TextViewBar.text.toString()}7"
+        }
         TextViewBar.text = text
     }
     fun EightBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}8"
+        if (infinity_check()){
+            text = "8"
+        } else {
+            text = "${TextViewBar.text.toString()}8"
+        }
         TextViewBar.text = text
     }
     fun NineBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}9"
+        if (infinity_check()){
+            text = "9"
+        } else {
+            text = "${TextViewBar.text.toString()}9"
+        }
         TextViewBar.text = text
     }
     fun MinusBtnClicked(view: View){
         check = operator_check()
-        if(check == 2){
+        if (infinity_check()){
+            text = ""
+        } else if(check == 2){
             text = "${TextViewBar.text.toString()}-"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}-"
@@ -93,20 +111,34 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun FourBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}4"
+        if (infinity_check()){
+            text = "4"
+        } else {
+            text = "${TextViewBar.text.toString()}4"
+        }
         TextViewBar.text = text
     }
     fun FiveBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}5"
+        if (infinity_check()){
+            text = "5"
+        } else {
+            text = "${TextViewBar.text.toString()}5"
+        }
         TextViewBar.text = text
     }
     fun SixBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}6"
+        if (infinity_check()){
+            text = "6"
+        } else {
+            text = "${TextViewBar.text.toString()}6"
+        }
         TextViewBar.text = text
     }
     fun plusBtnClicked(view: View){
         check = operator_check()
-        if(check == 2){
+        if (infinity_check()){
+            text = ""
+        } else if(check == 2){
             text = "${TextViewBar.text.toString()}+"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}+"
@@ -118,20 +150,34 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun OneBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}1"
+        if (infinity_check()){
+            text = "1"
+        } else {
+            text = "${TextViewBar.text.toString()}1"
+        }
         TextViewBar.text = text
     }
     fun TwoBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}2"
+        if (infinity_check()){
+            text = "2"
+        } else {
+            text = "${TextViewBar.text.toString()}2"
+        }
         TextViewBar.text = text
     }
     fun ThreeBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}3"
+        if (infinity_check()){
+            text = "3"
+        } else {
+            text = "${TextViewBar.text.toString()}3"
+        }
         TextViewBar.text = text
     }
     fun PowerBtnClicked(view: View){
         check = operator_check()
-        if(check == 2){
+        if (infinity_check()){
+            text = ""
+        } else if(check == 2){
             text = "${TextViewBar.text.toString()}^"
         }  else if (check == 1) {
             text = "${TextViewBar.text.toString().dropLast(1)}^"
@@ -143,13 +189,26 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun ZeroBtnClicked(view: View){
-        text = "${TextViewBar.text.toString()}0"
+        if (infinity_check()){
+            text = "0"
+        }else if (TextViewBar.text.toString() == "0"){
+            text = TextViewBar.text.toString()
+            Toast.makeText(this, "Zero is already present", Toast.LENGTH_SHORT).show()
+        } else {
+            text = "${TextViewBar.text.toString()}0"
+        }
         TextViewBar.text = text
     }
     fun DecimalBtnClicked(view: View){
         text = TextViewBar.text.toString()
-        if ( text?.lastOrNull() == '.'){
+        if (infinity_check()) {
+            text = "0."
+            TextViewBar.text = text
+        } else if ( text?.lastOrNull() == '.'){
             Toast.makeText(this, "Decimal Overloaded", Toast.LENGTH_SHORT).show()
+        } else if (text.isNullOrEmpty() || text?.lastOrNull() !in ZeroTonine) {
+            text = "${TextViewBar.text.toString()}0."
+            TextViewBar.text = text
         } else{
             text = "${TextViewBar.text.toString()}."
             TextViewBar.text = text
@@ -157,7 +216,10 @@ class MainActivity : AppCompatActivity() {
     }
     fun EraseOneBtnClicked(view: View) {
         len = TextViewBar.text.toString().length
-        if (len > 0){
+        if (infinity_check()){
+            text = ""
+            TextViewBar.text = text
+        } else if (len > 0){
             text = TextViewBar.text.toString().substring(0,len-1)
             TextViewBar.text = text
         }else {
@@ -167,17 +229,17 @@ class MainActivity : AppCompatActivity() {
     fun EqualBtnClicked(view: View){
         if(TextViewBar.text.isEmpty()){
             Toast.makeText(this, "Enter Something", Toast.LENGTH_SHORT).show()
-        } /*else if (operator_check() == 1){
-            Toast.makeText(this, "Incorrect Syntax", Toast.LENGTH_SHORT).show()
-        }*/
-        else {
+        } else if (infinity_check()){
+            text = TextViewBar.text.toString() // Infinity remains Infinity on equal button
+            TextViewBar.text =  text
+        } else {
             try {
 
                 text = TextViewBar.text.toString()
                 text = calculation.perform(text)
                 TextViewBar.text = text
             } catch (e : Exception) {
-                Toast.makeText(this, "Incorrect Syntax", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Syntax Error", Toast.LENGTH_SHORT).show()
                 while (!calculation.List.isEmpty()){
                     calculation.List.removeAt(0)
                 }
@@ -192,5 +254,11 @@ class MainActivity : AppCompatActivity() {
        /* this function returns 0 if string is empty, for replacement it returns 1 & to
          add the operator it returns 2.*/
     }
+    private fun infinity_check() : Boolean{
+       return (TextViewBar.text.toString() == "Infinity" ||  TextViewBar.text.toString() == "NaN")
+    }
+
+    // Bugs Fixed : Multiple Zeros , operations after getting Infity & NaN ,
+    //              Automatic Zero before decimal
 }
 
