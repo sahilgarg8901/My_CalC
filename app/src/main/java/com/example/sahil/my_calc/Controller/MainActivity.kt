@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     private var len: Int = 0
     private var check : Int = 2  // var used to store the return value of operator_check() function.
     private val ZeroTonine = arrayListOf<Char>('0','1','2','3','4','5','6','7','8','9','.')
-    val calculation = calculation()
+    val calculation = com.example.sahil.my_calc.Utilities.calculation()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,10 @@ class MainActivity : AppCompatActivity() {
     fun ClearAllBtnClicked(view: View){
         if(TextViewBar.text.isEmpty()){
             Toast.makeText(this, "Already Blank", Toast.LENGTH_SHORT).show()
-        }else TextViewBar.text = ""
+        }else {
+            text = ""
+            TextViewBar.text =  text
+        }
     }
     fun DivideBtnClicked(view: View){
 
@@ -171,7 +174,8 @@ class MainActivity : AppCompatActivity() {
             try {
 
                 text = TextViewBar.text.toString()
-                TextViewBar.text = calculation.perform(text)
+                text = calculation.perform(text)
+                TextViewBar.text = text
             } catch (e : Exception) {
                 Toast.makeText(this, "Incorrect Syntax", Toast.LENGTH_SHORT).show()
                 while (!calculation.List.isEmpty()){

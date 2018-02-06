@@ -1,6 +1,5 @@
-package com.example.sahil.my_calc.Controller
+package com.example.sahil.my_calc.Utilities
 
-import org.w3c.dom.Element
 import java.util.ArrayList
 import kotlin.math.pow
 
@@ -24,7 +23,7 @@ public class calculation {
              i += 1
          }
 
-         List.add(MyData(text!!.substring(j,i).toDouble(), ' '))
+         List.add(MyData(text!!.substring(j, i).toDouble(), ' '))
          for (a in signs){
             i = 0
              while (i <= List.lastIndex) {
