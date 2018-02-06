@@ -43,7 +43,13 @@ class MainActivity : AppCompatActivity() {
     }
     fun DivideBtnClicked(view: View){
 
+            if (dot_check()){
+                text = "${TextViewBar.text.toString()}0"
+                TextViewBar.text = text
+            }
+
             check = operator_check()
+
             if (infinity_check()){
                 text = ""
             } else if(check == 2){                // add the '/' character to the string.
@@ -58,7 +64,14 @@ class MainActivity : AppCompatActivity() {
             TextViewBar.text = text
     }
     fun MultiplyBtnClicked(view: View){
+
+        if (dot_check()){
+            text = "${TextViewBar.text.toString()}0"
+            TextViewBar.text = text
+        }
+
         check = operator_check()
+
         if (infinity_check()){
             text = ""
         } else if(check == 2){
@@ -97,6 +110,12 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun MinusBtnClicked(view: View){
+
+        if (dot_check()){
+            text = "${TextViewBar.text.toString()}0"
+            TextViewBar.text = text
+        }
+
         check = operator_check()
         if (infinity_check()){
             text = ""
@@ -135,7 +154,14 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun plusBtnClicked(view: View){
+
+        if (dot_check()){
+            text = "${TextViewBar.text.toString()}0"
+            TextViewBar.text = text
+        }
+
         check = operator_check()
+
         if (infinity_check()){
             text = ""
         } else if(check == 2){
@@ -174,7 +200,14 @@ class MainActivity : AppCompatActivity() {
         TextViewBar.text = text
     }
     fun PowerBtnClicked(view: View){
+
+        if (dot_check()){
+            text = "${TextViewBar.text.toString()}0"
+            TextViewBar.text = text
+        }
+
         check = operator_check()
+
         if (infinity_check()){
             text = ""
         } else if(check == 2){
@@ -201,10 +234,11 @@ class MainActivity : AppCompatActivity() {
     }
     fun DecimalBtnClicked(view: View){
         text = TextViewBar.text.toString()
+
         if (infinity_check()) {
             text = "0."
             TextViewBar.text = text
-        } else if ( text?.lastOrNull() == '.'){
+        } else if ( dot_check()){
             Toast.makeText(this, "Decimal Overloaded", Toast.LENGTH_SHORT).show()
         } else if (text.isNullOrEmpty() || text?.lastOrNull() !in ZeroTonine) {
             text = "${TextViewBar.text.toString()}0."
@@ -216,6 +250,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun EraseOneBtnClicked(view: View) {
         len = TextViewBar.text.toString().length
+
         if (infinity_check()){
             text = ""
             TextViewBar.text = text
@@ -257,8 +292,10 @@ class MainActivity : AppCompatActivity() {
     private fun infinity_check() : Boolean{
        return (TextViewBar.text.toString() == "Infinity" ||  TextViewBar.text.toString() == "NaN")
     }
+    private fun dot_check() : Boolean {
+        return (text?.lastOrNull() == '.')
+    }
+    // Feature Added : Automatic Zero between decimal & operations
 
-    // Bugs Fixed : Multiple Zeros , operations after getting Infity & NaN ,
-    //              Automatic Zero before decimal
 }
 
