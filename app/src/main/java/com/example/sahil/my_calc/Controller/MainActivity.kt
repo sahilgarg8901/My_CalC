@@ -43,183 +43,51 @@ class MainActivity : AppCompatActivity() {
     }
     fun DivideBtnClicked(view: View){
 
-            if (dot_check()){
-                text = "${TextViewBar.text.toString()}0"
-                TextViewBar.text = text
-            }
-
-            check = operator_check()
-
-            if (infinity_check()){
-                text = ""
-            } else if(check == 2){                // add the '/' character to the string.
-                text = "${TextViewBar.text.toString()}/"
-            }  else if (check == 1) {      // replace the last character of the string with '/'
-                text = "${TextViewBar.text.toString().dropLast(1)}/"
-            } else {                // Showing a toast & keeping the text same as it is.
-                Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
-                text = TextViewBar.text.toString()
-            }
-                                    // Same above method is used in all other operator functions.
-            TextViewBar.text = text
+        ForOperatorOperation("/")
     }
     fun MultiplyBtnClicked(view: View){
+        ForOperatorOperation("*")
 
-        if (dot_check()){
-            text = "${TextViewBar.text.toString()}0"
-            TextViewBar.text = text
-        }
-
-        check = operator_check()
-
-        if (infinity_check()){
-            text = ""
-        } else if(check == 2){
-            text = "${TextViewBar.text.toString()}*"
-        }  else if (check == 1) {
-            text = "${TextViewBar.text.toString().dropLast(1)}*"
-        } else {
-            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
-            text = TextViewBar.text.toString()
-        }
-
-        TextViewBar.text = text
     }
     fun SevenBtnClicked(view: View){
-        if (infinity_check()){
-            text = "7"
-        } else {
-            text = "${TextViewBar.text.toString()}7"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("7")
     }
     fun EightBtnClicked(view: View){
-        if (infinity_check()){
-            text = "8"
-        } else {
-            text = "${TextViewBar.text.toString()}8"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("8")
     }
     fun NineBtnClicked(view: View){
-        if (infinity_check()){
-            text = "9"
-        } else {
-            text = "${TextViewBar.text.toString()}9"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("9")
     }
     fun MinusBtnClicked(view: View){
 
-        if (dot_check()){
-            text = "${TextViewBar.text.toString()}0"
-            TextViewBar.text = text
-        }
-
-        check = operator_check()
-        if (infinity_check()){
-            text = ""
-        } else if(check == 2){
-            text = "${TextViewBar.text.toString()}-"
-        }  else if (check == 1) {
-            text = "${TextViewBar.text.toString().dropLast(1)}-"
-        } else {
-            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
-            text = TextViewBar.text.toString()
-        }
-        TextViewBar.text = text
+        ForOperatorOperation("-")
     }
     fun FourBtnClicked(view: View){
-        if (infinity_check()){
-            text = "4"
-        } else {
-            text = "${TextViewBar.text.toString()}4"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("4")
     }
     fun FiveBtnClicked(view: View){
-        if (infinity_check()){
-            text = "5"
-        } else {
-            text = "${TextViewBar.text.toString()}5"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("5")
     }
     fun SixBtnClicked(view: View){
-        if (infinity_check()){
-            text = "6"
-        } else {
-            text = "${TextViewBar.text.toString()}6"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("6")
     }
     fun plusBtnClicked(view: View){
 
-        if (dot_check()){
-            text = "${TextViewBar.text.toString()}0"
-            TextViewBar.text = text
-        }
-
-        check = operator_check()
-
-        if (infinity_check()){
-            text = ""
-        } else if(check == 2){
-            text = "${TextViewBar.text.toString()}+"
-        }  else if (check == 1) {
-            text = "${TextViewBar.text.toString().dropLast(1)}+"
-        } else {
-            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
-            text = TextViewBar.text.toString()
-        }
-
-        TextViewBar.text = text
+        ForOperatorOperation("+")
     }
     fun OneBtnClicked(view: View){
-        if (infinity_check()){
-            text = "1"
-        } else {
-            text = "${TextViewBar.text.toString()}1"
-        }
-        TextViewBar.text = text
+
+        ForNumberOperation("1")
     }
     fun TwoBtnClicked(view: View){
-        if (infinity_check()){
-            text = "2"
-        } else {
-            text = "${TextViewBar.text.toString()}2"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("2")
     }
     fun ThreeBtnClicked(view: View){
-        if (infinity_check()){
-            text = "3"
-        } else {
-            text = "${TextViewBar.text.toString()}3"
-        }
-        TextViewBar.text = text
+        ForNumberOperation("3")
     }
     fun PowerBtnClicked(view: View){
 
-        if (dot_check()){
-            text = "${TextViewBar.text.toString()}0"
-            TextViewBar.text = text
-        }
-
-        check = operator_check()
-
-        if (infinity_check()){
-            text = ""
-        } else if(check == 2){
-            text = "${TextViewBar.text.toString()}^"
-        }  else if (check == 1) {
-            text = "${TextViewBar.text.toString().dropLast(1)}^"
-        } else {
-            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
-            text = TextViewBar.text.toString()
-        }
-
-        TextViewBar.text = text
+        ForOperatorOperation("^")
     }
     fun ZeroBtnClicked(view: View){
         if (infinity_check()){
@@ -296,6 +164,35 @@ class MainActivity : AppCompatActivity() {
         return (text?.lastOrNull() == '.')
     }
     // Feature Added : Automatic Zero between decimal & operations
+    private fun ForNumberOperation(number : String){
+        if (infinity_check() || TextViewBar.text.toString() == "0"){
+            text = number
+        } else {
+            text = TextViewBar.text.toString() + number
+        }
+        TextViewBar.text = text
+    }
+    private fun ForOperatorOperation(sign : String){
+        if (dot_check()){
+            text = "${TextViewBar.text.toString()}0"
+            TextViewBar.text = text
+        }
 
+        check = operator_check()
+
+        if (infinity_check()){
+            text = ""
+        } else if(check == 2){
+            text = TextViewBar.text.toString() + sign
+        }  else if (check == 1) {
+            text = TextViewBar.text.toString().dropLast(1) + sign
+        } else {
+            Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
+            text = TextViewBar.text.toString()
+        }
+
+        TextViewBar.text = text
+    }
+        //length of the code is reduced to half by using above two functions.
 }
 
