@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.sahil.my_calc.R
+import kotlinx.android.synthetic.main.activity_welcome.*
 
 class WelcomeActivity : AppCompatActivity() {
     private val splashScreenTime = 3000
@@ -17,5 +18,10 @@ class WelcomeActivity : AppCompatActivity() {
             startActivity(leagueIntent)
             finish()
         },splashScreenTime.toLong())
+        //WelcomeLogo.x = -1000f
+        //WelcomeLogo.animate().translationXBy(1000f).rotation(720f).duration=1000
+        WelcomeLogo.scaleX=0.5f
+        WelcomeLogo.scaleY=0.5f
+        WelcomeLogo.animate().scaleX(1f).scaleY(1f).rotation(720f).duration=1500
     }
 }

@@ -7,16 +7,16 @@
     tools:context="com.example.sahil.my_calc.Controller.WelcomeActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/WelcomeLogo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/background_image"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/welcome_image"
-        android:contentDescription="@string/background_image" />
+        app:srcCompat="@drawable/welcome_image" />
 
     <!--<Button
         android:id="@+id/getStartedBtn"

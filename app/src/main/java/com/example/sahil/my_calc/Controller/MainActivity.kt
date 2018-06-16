@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.sahil.my_calc.Utilities.Extra_text
 import com.example.sahil.my_calc.R
+import com.example.sahil.my_calc.R.id.TextViewBar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
