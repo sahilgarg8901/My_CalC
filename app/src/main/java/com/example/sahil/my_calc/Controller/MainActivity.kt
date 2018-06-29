@@ -3,6 +3,7 @@ package com.example.sahil.my_calc.Controller
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import com.example.sahil.my_calc.Utilities.Extra_text
 import com.example.sahil.my_calc.R
@@ -41,54 +42,6 @@ class MainActivity : AppCompatActivity() {
             text = ""
             TextViewBar.text =  text
         }
-    }
-    fun DivideBtnClicked(view: View){
-
-        ForOperatorOperation("/")
-    }
-    fun MultiplyBtnClicked(view: View){
-        ForOperatorOperation("*")
-
-    }
-    fun SevenBtnClicked(view: View){
-        ForNumberOperation("7")
-    }
-    fun EightBtnClicked(view: View){
-        ForNumberOperation("8")
-    }
-    fun NineBtnClicked(view: View){
-        ForNumberOperation("9")
-    }
-    fun MinusBtnClicked(view: View){
-
-        ForOperatorOperation("-")
-    }
-    fun FourBtnClicked(view: View){
-        ForNumberOperation("4")
-    }
-    fun FiveBtnClicked(view: View){
-        ForNumberOperation("5")
-    }
-    fun SixBtnClicked(view: View){
-        ForNumberOperation("6")
-    }
-    fun plusBtnClicked(view: View){
-
-        ForOperatorOperation("+")
-    }
-    fun OneBtnClicked(view: View){
-
-        ForNumberOperation("1")
-    }
-    fun TwoBtnClicked(view: View){
-        ForNumberOperation("2")
-    }
-    fun ThreeBtnClicked(view: View){
-        ForNumberOperation("3")
-    }
-    fun PowerBtnClicked(view: View){
-
-        ForOperatorOperation("^")
     }
     fun ZeroBtnClicked(view: View){
         if (infinity_check()){
@@ -148,6 +101,25 @@ class MainActivity : AppCompatActivity() {
                     calculation.List.removeAt(0)
                 }
             }
+        }
+    }
+    fun OtherBtnClicked( view: View){
+        val BtnSelected : Button = view as Button
+        when(BtnSelected.id){
+            R.id.OneButton -> ForNumberOperation("1")
+            R.id.TwoButton -> ForNumberOperation("2")
+            R.id.ThreeButton -> ForNumberOperation("3")
+            R.id.FourButton -> ForNumberOperation("4")
+            R.id.FiveButton -> ForNumberOperation("5")
+            R.id.SixButton -> ForNumberOperation("6")
+            R.id.SevenButton -> ForNumberOperation("7")
+            R.id.EightButton -> ForNumberOperation("8")
+            R.id.NineButton -> ForNumberOperation("9")
+            R.id.PowerButton-> ForOperatorOperation("^")
+            R.id.DivideButton-> ForOperatorOperation("/")
+            R.id.MultiplyButton-> ForOperatorOperation("*")
+            R.id.PlusButton-> ForOperatorOperation("+")
+            R.id.MinusButton-> ForOperatorOperation("-")
         }
     }
     private fun operator_check() : Int {

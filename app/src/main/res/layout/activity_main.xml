@@ -73,7 +73,7 @@
                     android:id="@+id/SevenButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="SevenBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/seven"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -88,7 +88,7 @@
                     android:id="@+id/FourButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="FourBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/four"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -103,7 +103,7 @@
                     android:id="@+id/OneButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="OneBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/one"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -115,10 +115,10 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/PercentButton"
+                    android:id="@+id/PowerButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="PowerBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/power"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -154,7 +154,7 @@
                     android:id="@+id/EightButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="EightBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/eight"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -169,7 +169,7 @@
                     android:id="@+id/FiveButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="FiveBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/five"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -184,7 +184,7 @@
                     android:id="@+id/TwoButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="TwoBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/two"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -220,7 +220,7 @@
                     android:id="@+id/DivideButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="DivideBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/slash"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -235,7 +235,7 @@
                     android:id="@+id/NineButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="NineBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/nine"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -250,7 +250,7 @@
                     android:id="@+id/SixButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="SixBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/six"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -265,7 +265,7 @@
                     android:id="@+id/ThreeButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="ThreeBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/three"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -302,7 +302,7 @@
                     android:id="@+id/MultiplyButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="MultiplyBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/star"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -317,7 +317,7 @@
                     android:id="@+id/MinusButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="MinusBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/minus"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -329,10 +329,10 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/plusButton"
+                    android:id="@+id/PlusButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="plusBtnClicked"
+                    android:onClick="OtherBtnClicked"
                     android:text="@string/plus"
                     android:textSize="18sp" />
             </LinearLayout>
