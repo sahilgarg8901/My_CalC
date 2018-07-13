@@ -44,13 +44,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun ZeroBtnClicked(view: View){
+        text=TextViewBar.text.toString()
         if (infinity_check()){
             text = "0"
-        }else if (TextViewBar.text.toString() == "0"){
-            text = TextViewBar.text.toString()
+        }else if (multiZeroAfterOperators() || text == "0"){
             Toast.makeText(this, "Zero is already present", Toast.LENGTH_SHORT).show()
         } else {
-            text = "${TextViewBar.text.toString()}0"
+            text += "0"
         }
         TextViewBar.text = text
     }
@@ -122,6 +122,13 @@ class MainActivity : AppCompatActivity() {
             R.id.MinusButton-> ForOperatorOperation("-")
         }
     }
+    private fun multiZeroAfterOperators() : Boolean{
+        var status = false
+        if (text?.lastOrNull() == '0' && text!!.length>2){
+            if (text!![(text!!.length)-2] in "+-/*^") status=true
+        }
+        return status
+    }
     private fun operator_check() : Int {
         len = TextViewBar.text.toString().length
         if (len > 0){
@@ -148,24 +155,44 @@ class MainActivity : AppCompatActivity() {
     private fun ForNumberOperation(number : String){
         if (infinity_check() || TextViewBar.text.toString() == "0"){
             text = number
+        }else if(multiZeroAfterOperators()){
+            text = TextViewBar.text.toString().dropLast(1) + number
         } else {
             text = TextViewBar.text.toString() + number
         }
         TextViewBar.text = text
     }
     private fun ForOperatorOperation(sign : String){
-        if (dot_check()){
-            text = "${TextViewBar.text.toString()}0"
+        text = TextViewBar.text.toString()
+        if (text!!.lastOrNull()=='.'){
+            text = text!!.dropLast(1)
             TextViewBar.text = text
         }
+        if (text!!.lastOrNull()=='0'){
+            var count = 0
+            var allow=true
+            for (i in text!!.reversed()){
+                if (i == '0' && allow){
+                    count++
 
+                }else{
+                    if (i == '.') {
+                        text= text!!.dropLast(count)
+                        if (text!!.lastOrNull() == '.') text= text!!.dropLast(1)
+                        break
+                    }
+                    if (i in "+-/*^") break
+                    allow=false
+                }
+            }
+            TextViewBar.text = text
+        }
         check = operator_check()
-
         if (infinity_check()){
             text = ""
         } else if(check == 2){
             text = TextViewBar.text.toString() + sign
-        }  else if (check == 1) {
+        } else if (check == 1) {
             text = TextViewBar.text.toString().dropLast(1) + sign
         } else {
             Toast.makeText(this, "First enter any number", Toast.LENGTH_SHORT).show()
