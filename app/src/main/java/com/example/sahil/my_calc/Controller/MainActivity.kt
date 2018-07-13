@@ -134,7 +134,15 @@ class MainActivity : AppCompatActivity() {
        return (TextViewBar.text.toString() == "Infinity" ||  TextViewBar.text.toString() == "NaN")
     }
     private fun dot_check() : Boolean {
-        return (text?.lastOrNull() == '.')
+        var status=false
+        for (i in text!!.reversed()){
+            if (i in "+-/*^") break
+            if (i !in "0123456789" && i == '.'){
+                status=true
+                break
+            }
+        }
+        return status
     }
     // Feature Added : Automatic Zero between decimal & operations
     private fun ForNumberOperation(number : String){
